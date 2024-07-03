@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 1000px;
+            margin-top: 50px;
+        }
+        table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center mb-4">Consultations</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Appointment ID</th>
+                <th>Doctor ID</th>
+                <th>Patient ID</th>
+                <th>Date</th>
+                <th>Notes</th>
+                <th>Prescription</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="consultation : ${consultations}">
+                <td th:text="${consultation.consultationId}"></td>
+                <td th:text="${consultation.appointmentId}"></td>
+                <td th:text="${consultation.doctorId}"></td>
+                <td th:text="${consultation.patientId}"></td>
+                <td th:text="${#dates.format(consultation.consultationDate, 'yyyy-MM-dd HH:mm')}"></td>
+                <td th:text="${consultation.notes}"></td>
+                <td th:text="${consultation.prescription}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

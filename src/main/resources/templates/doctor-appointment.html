@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Appointment Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+        .btn-secondary {
+            width: 100%;
+        }
+        .btn-danger {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">Doctor Appointment Booking</h2>
+    <form action="/bookAppointment" method="post">
+        <div class="form-group">
+            <label for="patientName">Patient Name</label>
+            <input type="text" class="form-control" id="patientName" name="patientName" placeholder="Patient Name" required>
+        </div>
+        <div class="form-group">
+            <label for="doctorName">Doctor Name</label>
+            <select class="form-control" id="doctorName" name="doctorName" required>
+                <option value="">Select Doctor</option>
+                <option value="Dr. Naveen">Dr. Naveen</option>
+                <option value="Dr. Kumar">Dr. Kumar</option>
+                <option value="Dr. Kalluri">Dr. Kalluri</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="appointmentDate">Appointment Date</label>
+            <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" required>
+        </div>
+        <div class="form-group">
+            <label for="appointmentTime">Appointment Time</label>
+            <input type="time" class="form-control" id="appointmentTime" name="appointmentTime" required>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason for Appointment</label>
+            <textarea class="form-control" id="reason" name="reason" rows="3" placeholder="Reason for Appointment" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+        <button type="button" class="btn btn-secondary mt-2">Reschedule Appointment</button>
+        <button type="button" class="btn btn-danger mt-2">Cancel Appointment</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
